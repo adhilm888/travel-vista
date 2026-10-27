@@ -1,1 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TravelVista - Discover your next adventure with premium curated travel packages and global destinations.">
+  <title>TravelVista – Explore the World</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-compass"></i>
+        <span>Travel<span>Vista</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#destinations" class="nav-link">Destinations</a></li>
+          <li><a href="#packages" class="nav-link">Packages</a></li>
+          <li><a href="#offers" class="nav-link">Special Offers</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#destinations" class="btn btn-primary nav-btn">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Search Bar -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="hero-badge"><i class="fa-solid fa-plane-departure"></i> Explore 100+ Premium Destinations</span>
+      <h1 class="hero-title">Discover Your Next <span>Adventure</span></h1>
+      <p class="hero-subtitle">Book curated holiday packages, luxury stays, and unforgettable tours around the globe at unbeatable prices.</p>
+
+      <!-- Travel Search Bar -->
+      <div class="search-box">
+        <form id="search-form" class="search-form">
+          <div class="form-group">
+            <label for="search-destination"><i class="fa-solid fa-location-dot"></i> Destination</label>
+            <input type="text" id="search-destination" placeholder="Where do you want to go?" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="check-in"><i class="fa-solid fa-calendar-days"></i> Check-in</label>
+            <input type="date" id="check-in">
+          </div>
+
+          <div class="form-group">
+            <label for="check-out"><i class="fa-solid fa-calendar-check"></i> Check-out</label>
+            <input type="date" id="check-out">
+          </div>
+
+          <div class="form-group">
+            <label for="guests"><i class="fa-solid fa-user-group"></i> Travellers</label>
+            <select id="guests">
+              <option value="1">1 Person</option>
+              <option value="2" selected>2 Persons</option>
+              <option value="4">4 Persons (Family)</option>
+              <option value="6">Group (6+)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-search">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Popular Destinations Section -->
+  <section class="section destinations-section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-subtitle">Top Places</span>
+          <h2 class="section-title">Popular Destinations</h2>
+        </div>
+        <p class="section-desc">Handpicked destinations loved by thousands of global travelers.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-controls">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="Asia">Asia</button>
+        <button class="filter-btn" data-category="Europe">Europe</button>
+        <button class="filter-btn" data-category="Middle East">Middle East</button>
+        <button class="filter-btn" data-category="Beach">Beach & Island</button>
+        <button class="filter-btn" data-category="Budget">Under ₹50,000</button>
+      </div>
+
+      <!-- Dynamic Destinations Grid -->
+      <div class="grid destinations-grid" id="destinations-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+      <!-- Empty Search Result Fallback -->
+      <div class="no-results hidden" id="no-results">
+        <i class="fa-solid fa-compass-drafting"></i>
+        <h3>No matching destinations found</h3>
+        <p>Try resetting filters or searching for another location like Dubai, Paris, or Bali.</p>
+        <button class="btn btn-secondary" id="reset-search-btn">Reset All Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommended Tour Packages Section -->
+  <section class="section packages-section" id="packages">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-subtitle">Curated Itineraries</span>
+          <h2 class="section-title">Recommended Tour Packages</h2>
+        </div>
+        <p class="section-desc">All-inclusive holiday packages designed for max comfort and adventure.</p>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="grid packages-grid" id="packages-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Travel Offers Section -->
+  <section class="section offers-section" id="offers">
+    <div class="container">
+      <div class="offers-banner">
+        <div class="offers-content">
+          <span class="badge badge-orange">Limited Time Offer</span>
+          <h2>Exclusive Summer Getaway Discounts!</h2>
+          <p>Get up to <strong>30% OFF</strong> on early bird bookings for European tours & tropical island resorts.</p>
+          <div class="promo-code">
+            <span>Use Code: <strong>SUMMER2026</strong></span>
+          </div>
+          <a href="#destinations" class="btn btn-orange">Claim Discount</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="section about-section" id="about">
+    <div class="container about-container">
+      <div class="about-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80" alt="Traveler looking at mountain horizon" class="about-img">
+        <div class="about-experience-card">
+          <span class="exp-number">12+</span>
+          <span class="exp-text">Years of Excellence</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="section-subtitle">Why Choose Us</span>
+        <h2 class="section-title">We Craft Unforgettable Travel Memories</h2>
+        <p class="about-desc">At TravelVista, we believe travel transforms lives. For over a decade, we have provided premium personalized holiday packages, reliable hotel bookings, and round-the-clock guidance to over 50,000 happy travelers worldwide.</p>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h4>100% Safe & Verified Stays</h4>
+              <p>Top-rated 4-star and 5-star properties vetted for quality.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+            <div>
+              <h4>Best Price Guarantee</h4>
+              <p>Competitive prices with zero hidden booking charges.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+            <div>
+              <h4>24/7 Global Support</h4>
+              <p>Dedicated travel concierges available anytime during your trip.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Reviews Section -->
+  <section class="section reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Real Experiences</span>
+        <h2 class="section-title">What Our Travelers Say</h2>
+      </div>
+
+      <div class="grid reviews-grid" id="reviews-grid">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="section newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <h2>Subscribe to Get Secret Deals & Travel Tips</h2>
+          <p>Join over 25,000 subscribers and receive weekly discounts directly in your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <div class="form-feedback" id="newsletter-message"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo footer-logo">
+          <i class="fa-solid fa-compass"></i>
+          <span>Travel<span>Vista</span></span>
+        </a>
+        <p class="footer-desc">Your trusted global companion for discovering scenic destinations, booking luxury tours, and creating lifelong memories.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Popular Destinations</a></li>
+          <li><a href="#packages">Tour Packages</a></li>
+          <li><a href="#offers">Special Offers</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Top Destinations</h4>
+        <ul class="footer-links">
+          <li><a href="#destinations">Dubai, UAE</a></li>
+          <li><a href="#destinations">Bali, Indonesia</a></li>
+          <li><a href="#destinations">Paris, France</a></li>
+          <li><a href="#destinations">Maldives Resort</a></li>
+          <li><a href="#destinations">Swiss Alps, Switzerland</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact Support</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i> 100 Vista Towers, Marine Drive, Mumbai, India</li>
+          <li><i class="fa-solid fa-phone"></i> +91 1800-123-8899</li>
+          <li><i class="fa-solid fa-envelope"></i> support@travelvista.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>&copy; 2026 TravelVista. All Rights Reserved. Created for demonstration portfolio purposes.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Details Dynamic Modal -->
+  <div class="modal-overlay hidden" id="booking-modal">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <i class="fa-solid fa-circle-check modal-icon"></i>
+        <h3>Sample Travel Booking Details</h3>
+        <p class="modal-note">This is a frontend demonstration summary. No real payment will be processed.</p>
+      </div>
+
+      <div class="modal-body" id="modal-body-content">
+        <!-- Injected via JS -->
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="modal-cancel-btn">Close Window</button>
+        <button class="btn btn-primary" id="modal-confirm-btn">Confirm Sample Booking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
